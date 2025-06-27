@@ -7,13 +7,18 @@ ENGLISH | [简体中文](README_CN.md)
 Pretraining a foundation model to solve partial differential equation (PDE) requires diverse data.
 To train the foundation model PDEformer-2 for 2D PDEs ([GitHub](https://github.com/functoreality/pdeformer-2), [Gitee](https://gitee.com/functoreality/pdeformer-2)),
 we developed the PDEFoundry-2 pretraining dataset, which includes different PDE forms, domain shapes, boundary conditions, number of variables and equations, as well as time-dependency.
-The complete pretraining dataset of approximately 40TB can be downloaded from (TODO).
+The complete pretraining dataset of approximately 40TB can be downloaded using the scripts in the `download/` directory.
 Note that since each sample in this dataset corresponds to a different specific PDE form, it is not suitable for training typical neural operators (such as FNO and DeepONet).
 
 This repository provides the data generation code for the PDEFoundry-2 pretraining dataset.
 In addition to this, to validate the performance of the pretrained model, we also prepared three additional fine-tuning datasets (Sine-Gordon, INS-Tracer, INS-Pipe) for specific PDEs,
-inverse problem datasets, and used FEniCSx to tackle with PDEs that Dedalus failed to solve.
-The corresponding data generation code is also included in the repository.
+as well as inverse problem datasets.
+These dataset can also be downloaded using scripts in `download/`, and
+the corresponding data generation code is included in the repository as well.
+
+The datasets can be used directly after downloading.
+It is not necessary to run additional script files provided in this repository or to install Python dependencies as described below.
+The remaining content of this document is only provided for readers that intend to run the data generation program themselves.
 
 ## Installing Python Dependencies
 

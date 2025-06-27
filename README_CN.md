@@ -7,14 +7,16 @@
 偏微分方程（PDE）基础模型的预训练需要多样化的数据。
 为了训练针对 2D PDE 的基础模型 PDEformer-2（[GitHub](https://github.com/functoreality/pdeformer-2)，[Gitee](https://gitee.com/functoreality/pdeformer-2)），
 我们构建了 PDEFoundry-2 预训练数据集，其中包含不同的 PDE 形式、区域形状、边界条件、变量与方程个数、含时情况。
-总共约 40TB 的完整预训练数据集可以在（TODO）下载。
+总共约 40TB 的完整预训练数据集可以使用本仓库 `download/` 目录内提供的脚本下载。
 注意，由于这些数据集中的每个样本对应不同的特定 PDE 形式，它并不适用于训练通常意义上的神经算子（例如 FNO、DeepONet）。
 
 本仓库提供了 PDEFoundry-2 预训练数据集的生成代码。
 此外，为了验证预训练后模型的性能，我们还额外准备了 Sine-Gordon、INS-Tracer、INS-Pipe 这三个（针对特定 PDE 的）微调数据集，
-反问题数据集，
-以及使用 FEniCSx 处理 Dedalus 求解异常的方程。
-这部分的数据生成代码也包含在仓库中。
+以及反问题数据集。
+这部分的数据同样可以使用 `download/` 目录中的脚本下载，相应的数据生成代码也同样包含在本仓库中。
+
+数据集下载后可以直接使用，无需额外运行本仓库提供的其他脚本文件，也不需要按下文的说明安装 Python 依赖。
+只有在需要自己运行数据生成程序的情况下，用户才需要继续阅读本文档的后续内容。
 
 ## 安装 Python 依赖
 
